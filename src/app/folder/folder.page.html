@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header> Recipe List </ion-list-header>
+
+    <ion-item *ngFor="let item of data">
+      <ion-avatar slot="start">
+        <img src={{item.imageUrl}} />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.id}}</h2>
+        <h3>{{item.title}}</h3>
+        <h3 *ngFor="let i of item.ingredients">{{i}}</h3>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
